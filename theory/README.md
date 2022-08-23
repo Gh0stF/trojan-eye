@@ -6,9 +6,9 @@
 
 以下是Poller中出现的一些bug，有兴趣可了解：
 
-+ [解决Poller(Executor)内存马的旧版本问题]("https://github.com/Kyo-w/trojan-eye/blob/master/theory/buffersocket.md")
-+ [Poller在不同版本之间的差异]("https://github.com/Kyo-w/trojan-eye/blob/master/theory/version.md")
-+ [Poller(Executor)内存马面对websocket的Bug]("https://github.com/Kyo-w/trojan-eye/blob/master/theory/websocktbug.md")
++ [解决Poller(Executor)内存马的旧版本问题](https://github.com/Kyo-w/trojan-eye/blob/master/theory/buffersocket.md)
++ [Poller在不同版本之间的差异](https://github.com/Kyo-w/trojan-eye/blob/master/theory/version.md)
++ [Poller(Executor)内存马面对websocket的Bug](https://github.com/Kyo-w/trojan-eye/blob/master/theory/websocktbug.md)
 
 ## 继承Poller+重写processKey
 
