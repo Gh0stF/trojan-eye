@@ -1,6 +1,6 @@
 # Poller(Executor)内存马面对websocket的Bug
 
-深蓝师傅利用NioEndpoint.NioSocketWrapper.unread函数解决了socket数据读取复用的问题，但是其实unread函数的ByteBuffer，大小如果设置不当，会给业务本身带来毁灭性的打击。我深感这种直接HOOK到socket层面的内存马带来的巨大影响，所以还是代师傅探索一些未知的问题，所以我自行测试了不少流量，最终还是被我发现了一个未知BUG。
+深蓝师傅利用NioEndpoint.NioSocketWrapper.unread函数解决了socket数据读取复用的问题，但是其实unread函数的ByteBuffer，如果大小如果设置不当，会给业务本身带来毁灭性的打击。我深感这种直接HOOK到socket层面的内存马带来的巨大影响，所以还是代师傅探索一些未知的问题，所以我自行测试了不少流量，最终还是被我发现了一个未知BUG。
 
 ## 旧实现存在的严重BUG
 
@@ -14,7 +14,7 @@
 
 ![img](https://cdn.nlark.com/yuque/0/2022/png/1599979/1660372964321-a67eeea1-1bed-4933-bd71-12a7e07957bd.png)
 
-我在存在websocket服务的tomcat中安置好内存马，接着测试发现服务一直永远连不上，起初我以为是我本地服务的问题，但是当我把内存马关了，服务竟然通畅无阻。接着，为了确实哪块代码的错误，我把马子的代码一段一段做了测试，最终发现以下情况
+我在存在websocket服务的tomcat中安置好内存马，接着测试发现服务一直永远连不上，起初我以为是我本地服务的问题，但是当我把内存马关了，服务竟然通畅无阻。接着，为了确定哪块代码的错误，我把马子的代码一段一段做了测试，最终发现以下情况
 
 ![img](https://cdn.nlark.com/yuque/0/2022/png/1599979/1660373195874-d0a1bb2b-2e09-4379-bc33-c448b85fd7cc.png)
 
